@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
 
 
 /**/
 
-public class CareuuBehavior : MonoBehaviour, ICar
+public class CareuuBehavior : NetworkBehaviour, ICar
 {
 
     private Rigidbody m_rig;
@@ -56,6 +57,9 @@ public class CareuuBehavior : MonoBehaviour, ICar
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        if (!isLocalPlayer) return;
+
         float x = Input.GetAxis("Vertical");
         float z = Input.GetAxis("Horizontal");
         

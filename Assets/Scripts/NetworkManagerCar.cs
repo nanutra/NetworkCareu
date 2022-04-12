@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-namespace Mirror.Examples
+
+public class NetworkManagerCar : NetworkManager
 {
-
-        [AddComponentMenu("")]
-    public class NetworkManagerCar : NetworkManager
+    // Start is called before the first frame update
+    void Start()
     {
-        // Start is called before the first frame update
-        void Start()
-        {
         
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
+
