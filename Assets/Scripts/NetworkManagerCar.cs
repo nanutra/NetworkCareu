@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-namespace Mirror.Examples.Pong
+namespace Mirror.Examples
 {
 
         [AddComponentMenu("")]
