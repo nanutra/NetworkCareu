@@ -62,18 +62,29 @@ public class CareuuBehavior : NetworkBehaviour, ICar
 
         float x = Input.GetAxis("Vertical");
         float z = Input.GetAxis("Horizontal");
-        
-        
+
+       
         m_rig.AddForce(transform.forward * m_curSpeed * x);
-        transform.Rotate(new Vector3(0f, 1f * z , 0f));
+        transform.Rotate(new Vector3(x, 2f * z, 0f));
+        
+
+
+
+
         /**/
 
-        if(Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.rotation = Quaternion.Euler(0f, 0f, 0f) ;
-            m_rig.AddForce(Vector3.zero);
+            m_rig.velocity = Vector3.zero;
+            m_rig.angularVelocity = Vector3.zero;
         }
 
-    }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            m_rig.AddForce(transform.up * m_curSpeed );
+        }
+
+}
 
 }
